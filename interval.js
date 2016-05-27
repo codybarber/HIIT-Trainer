@@ -4,28 +4,27 @@ $(document).ready(function() {
     event.preventDefault();
     var intervalTime = $('.exercise').val();
     intervalTime = Number(intervalTime);
+    startClock(intervalTime);
     var cooldownTime = $('.cooldown').val();
     cooldownTime = Number(cooldownTime)
-    startClock(intervalTime);
-
-
-  })
-
-  var time = clock.getTime()
-
+    setTimeout(function() {
+      startCooldown(cooldownTime);
+    }, intervalTime * 1000 + 1000);
+  });
 
 
   function startClock(intervalTime) {
-    var clock = $('.timer').FlipClock(intervalTime, {
+    var clock = $('.exerciseTimer').FlipClock(intervalTime, {
       clockFace: 'MinuteCounter',
       countdown: true
     });
   }
-  // setTimeout(function() {
-  //   setInterval(function() {
-  //     clock.increment();
-  //   }, 1000);
-  // });
 
+  function startCooldown(cooldownTime) {
+    var clock = $('.cooldownTimer').FlipClock(cooldownTime, {
+      clockFace: 'MinuteCounter',
+      countdown: true
+    });
+  }
 
 });
