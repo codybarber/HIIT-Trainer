@@ -1,9 +1,10 @@
 body {
   background-image: url(background.png);
+  height: auto;
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
 }
 
 .container .exerciseTimer {
@@ -11,7 +12,7 @@ body {
   height: 100px;
   position: absolute;
   top: 0;
-  bottom: 50%;
+  bottom: 60%;
   left: 0;
   right: 0;
   margin: auto;
@@ -21,7 +22,18 @@ body {
   width: 400px;
   height: 100px;
   position: absolute;
-  top: 25%;
+  top: 15%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.intervalLength {
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  top: 60%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -32,17 +44,7 @@ input {
   width: 150px;
   margin-top: 10px;
   padding: 2px;
-}
-
-.intervalLength {
-  width: 250px;
-  height: 100px;
-  position: absolute;
-  top: 90%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  cursor: pointer;
 }
 
 .submit {
@@ -51,4 +53,20 @@ input {
   margin: 10px;
   margin-left: 35px;
   height: 30px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: grey;
+  color: white;
+}
+
+.submit:active {
+  font-size: .8em;
+  background-color: lightgrey;
+  color: black;
+}
+
+.blue {
+  background-color: lightblue
 }

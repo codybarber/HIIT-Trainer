@@ -19,8 +19,8 @@ $(document).ready(function() {
       startCooldown(cooldownTime);
       setTimeout(function() {
         cycle(amount - 1);
-      }, cooldownTime * 1000 + 500)
-    }, intervalTime * 1000 + 500);
+      }, cooldownTime * 1000 + 1000)
+    }, intervalTime * 1000 + 1000);
   }
 
   function startClock(intervalTime) {
