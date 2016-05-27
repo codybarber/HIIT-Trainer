@@ -17,6 +17,28 @@ body {
   margin: auto;
 }
 
-.input {
+input {
   width: 150px;
+  margin-top: 10px;
+  padding: 2px;
+}
+
+.intervalLength {
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  top: 90%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.submit {
+  text-align: center;
+  font-size: .8em;
+  box-sizing: border-box;
+  border-radius: 7px;
+  margin: 10px;
+  margin-left: 35px;
 }

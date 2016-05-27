@@ -2,16 +2,20 @@ $(document).ready(function() {
 
   $('.intervalLength').submit(function(event) {
     event.preventDefault();
-    var intervalTime = $('.input').val();
+    var intervalTime = $('.exercise').val();
     intervalTime = Number(intervalTime);
-    console.log("line 5" + intervalTime)
+    var cooldownTime = $('.cooldown').val();
+    cooldownTime = Number(cooldownTime)
     startClock(intervalTime);
+
+
   })
+
+  var time = clock.getTime()
 
 
 
   function startClock(intervalTime) {
-    console.log(intervalTime)
     var clock = $('.timer').FlipClock(intervalTime, {
       clockFace: 'MinuteCounter',
       countdown: true
