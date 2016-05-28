@@ -37,4 +37,31 @@ $(document).ready(function() {
     });
   }
 
+  function onYouTubeIframeAPIReady() {
+    var videos = [
+      'UUimaa__UgY',
+      'iPBxVY65XmE',
+      'vftbRCwFriI'
+    ];
+    var idx  = 0;
+
+    var player  = new YT.Player('player', {
+      height: '390',
+      width: '640',
+      events: {
+        'onReady': function() {
+          nextVideo();
+        }
+      }
+    });
+
+    function nextVideo() {
+      var id = videos[idx];
+      if (!id) return;
+      player.loadVideoById(id);
+      idx++;
+      setTimeout(nextVideo, 10000);
+    }
+  }
+
 });
