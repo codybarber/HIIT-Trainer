@@ -29,7 +29,7 @@ body {
   margin: auto;
 }
 
-.intervalLength {
+.intervals {
   width: 250px;
   height: 100px;
   position: absolute;
@@ -69,4 +69,8 @@ input {
 
 .blue {
   background-color: lightblue
+}
+
+#player {
+  visibility: hidden;
 }
