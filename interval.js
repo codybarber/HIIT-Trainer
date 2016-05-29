@@ -6,8 +6,6 @@
     ];
     var idx  = 0;
 
-    $('.intervals').submit(function(event) {
-      event.preventDefault();
       var player  = new YT.Player('player', {
         height: '39',
         width: '64',
