@@ -43,6 +43,7 @@ body {
 input {
   width: 150px;
   margin-top: 10px;
+  margin-left: 40px;
   padding: 2px;
   cursor: pointer;
 }
@@ -51,7 +52,7 @@ input {
   text-align: center;
   font-size: .8em;
   margin: 10px;
-  margin-left: 35px;
+  margin-left: 80px;
   height: 30px;
   cursor: pointer;
 }
