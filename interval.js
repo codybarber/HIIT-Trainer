@@ -44,12 +44,12 @@ $(document).ready(function() {
     intervalTime = Number(intervalTime);
     startClock(intervalTime);
     var cooldownTime = $('.cooldown').val();
-    cooldownTime = Number(cooldownTime)
+    cooldownTime = Number(cooldownTime);
     setTimeout(function() {
       startCooldown(cooldownTime);
       setTimeout(function() {
         cycle(amount - 1);
-      }, cooldownTime * 1000 + 1000)
+      }, cooldownTime * 1000 + 1000);
     }, intervalTime * 1000 + 1000);
   }
 
