@@ -1,33 +1,36 @@
-  // function onYouTubeIframeAPIReady() {
-  //   var videos = [
-  //     'UUimaa__UgY',
-  //     'iPBxVY65XmE',
-  //     'vftbRCwFriI'
-  //   ];
-  //   var idx  = 0;
-  //
-  //     var player  = new YT.Player('player', {
-  //       height: '39',
-  //       width: '64',
-  //       events: {
-  //         'onReady': function() {
-  //           nextVideo();
-  //         }
-  //       }
-  //     });
-  //   });
-  //
-  //
-  //   function nextVideo() {
-  //     var id = videos[idx];
-  //     if (!id) return;
-  //     player.loadVideoById(id);
-  //     idx++;
-  //     setTimeout(nextVideo, 10000);
-  //   }
-  // }
+//YouTube API
+
+function onYouTubeIframeAPIReady() {
+  var videos = [
+    'UUimaa__UgY',
+    'iPBxVY65XmE',
+    'vftbRCwFriI'
+  ];
+  var idx  = 0;
+
+  var player  = new YT.Player('player', {
+    height: '39',
+    width: '64',
+    events: {
+      'onReady': function() {
+        nextVideo();
+      }
+    }
+  });
+}
 
 
+function nextVideo() {
+  var id = videos[idx];
+  if (!id) return;
+  player.loadVideoById(id);
+  idx++;
+  setTimeout(nextVideo, 10000);
+}
+
+
+
+//FlipClock Code
 
 $(document).ready(function() {
 
@@ -44,12 +47,12 @@ $(document).ready(function() {
     intervalTime = Number(intervalTime);
     startClock(intervalTime);
     var cooldownTime = $('.cooldown').val();
-    cooldownTime = Number(cooldownTime)
+    cooldownTime = Number(cooldownTime);
     setTimeout(function() {
       startCooldown(cooldownTime);
       setTimeout(function() {
         cycle(amount - 1);
-      }, cooldownTime * 1000 + 1000)
+      }, cooldownTime * 1000 + 1000);
     }, intervalTime * 1000 + 1000);
   }
 
