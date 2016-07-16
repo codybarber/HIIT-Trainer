@@ -1,38 +1,19 @@
-//YouTube API
-
-function onYouTubeIframeAPIReady() {
-  var videos = [
-    'UUimaa__UgY',
-    'iPBxVY65XmE',
-    'vftbRCwFriI'
-  ];
-  var idx  = 0;
-
-  var player  = new YT.Player('player', {
-    height: '39',
-    width: '64',
-    events: {
-      'onReady': function() {
-        nextVideo();
-      }
-    }
-  });
-}
-
-
-function nextVideo() {
-  var id = videos[idx];
-  if (!id) return;
-  player.loadVideoById(id);
-  idx++;
-  setTimeout(nextVideo, 10000);
-}
-
-
-
-//FlipClock Code
-
 $(document).ready(function() {
+
+  // SoundCloud API
+  SC.initialize({
+    client_id: '66d8dccff739cbb7c078f98e11993438'
+  });
+
+  $('.submit').click(function() {
+    SC.stream('/playlists/241305071')
+      .then(function(player) {
+        player.play();
+      });
+  });
+
+
+  //FlipClock Code
 
   $('.intervals').submit(function(event) {
     event.preventDefault();
