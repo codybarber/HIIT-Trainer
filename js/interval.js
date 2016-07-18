@@ -1,7 +1,6 @@
+var amount = 0;
 $(document).ready(function() {
-
-  var bell = new Audio('bell.mp3');
-
+var player;
   $('.intervals').submit(function(event) {
     event.preventDefault();
     var amount = $('.amount').val();
@@ -57,13 +56,15 @@ $(document).ready(function() {
     var intervalTime = $('.exercise').val();
     intervalTime = Number(intervalTime);
     workoutCountdown('exerciseTimer', 0, intervalTime);
-    bell.play();
     var cooldownTime = $('.cooldown').val();
     cooldownTime = Number(cooldownTime);
     setTimeout(function() {
+      // turn down volume
+      player.setVolume(20);
       cooldownCountdown('cooldownTimer', 0, cooldownTime);
-      bell.play();
       setTimeout(function() {
+        // turn up volume
+        player.setVolume(100);
         cycle(amount - 1);
       }, cooldownTime * 1000 + 1000);
     }, intervalTime * 1000 + 1000);
@@ -92,7 +93,7 @@ $(document).ready(function() {
       } else if ($('.genre').val() === 'futureBass') {
         playlist = futureBassPlaylist;
       }
-      var player  = new YT.Player('player', {
+      player  = new YT.Player('player', {
         height: '50',
         width: '50',
         playerVars:
