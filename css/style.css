@@ -1,77 +1,33 @@
-body {
-  background-image: url(background.png);
-  height: auto;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+* {
+  background-image: url('gradient_squares.png');
 }
 
-.container .exerciseTimer {
-  width: 400px;
-  height: 100px;
-  position: absolute;
-  top: 0;
-  bottom: 60%;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-.container .cooldownTimer {
-  width: 400px;
-  height: 100px;
-  position: absolute;
-  top: 15%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-.intervals {
-  width: 250px;
-  height: 100px;
-  position: absolute;
-  top: 60%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-input {
-  width: 150px;
-  margin-top: 10px;
-  margin-left: 40px;
-  padding: 2px;
-  cursor: pointer;
-}
-
-.submit {
+.header {
+  font-size: 4em;
+  text-shadow: 3px 3px 3px grey;
   text-align: center;
-  font-size: .8em;
-  margin: 10px;
-  margin-left: 80px;
-  height: 30px;
-  cursor: pointer;
+  font-family: 'Kaushan Script', cursive;
+  margin: 25px;
 }
 
-.submit:hover {
-  background-color: grey;
-  color: white;
+.headerBar {
 }
 
-.submit:active {
-  font-size: .8em;
-  background-color: lightgrey;
-  color: black;
+.body {
+  text-align: center;
+  margin-top: 30px;
 }
 
-.blue {
-  background-color: lightblue
+.timerText {
+  font-size: 5em;
+  text-shadow: 3px 3px 3px grey;
+  font-family: 'Exo', sans-serif;
+  color: #666;
 }
 
-#player {
-  visibility: hidden;
+.timerHeader {
+
+  font-size: 4em;
+  text-shadow: 3px 3px 3px grey;
+  font-family: 'Exo', sans-serif;
 }

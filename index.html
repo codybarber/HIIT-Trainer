@@ -1,28 +1,100 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>HIIT Interval Timer</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/flipclock.css">
-    <script src="js/jquery.js"></script>
-    <script src="js/flipclock.js"></script>
-    <script src="js/interval.js"></script>
-    <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <h1>HIIT Interval Timer</h1>
-      <div class="exerciseTimer"></div>
-      <div class="cooldownTimer"></div>
-      <form class="intervals" action="index.html" method="post">
-        <input class="exercise" type="text" name="name" placeholder="interval length in seconds"><br>
-        <input class="cooldown" type="text" name="name" placeholder="cooldown length in seconds"><br>
-        <input class="amount" type="text" name="name" placeholder="number of intervals"><br>
-        <button id="button" class="submit" type="submit" name="submit">start timer</button>
-      </form>
-      <div id='putTheWidgetHere'></div>
+<head>
+  <meta charset="utf-8">
+  <title>H.I.I.T. Helper</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/foundation.css">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet" type="text/css">
+  <script src="js/jquery.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="js/interval.js"></script>
+</head>
+<body>
+  <div class="container-fluid headerBar">
+    <div class="">
+      <div class="row">
+        <div class="small-6 large-centered columns header" style="text-align: center">
+          <span>H.I.I.T. Helper</span>
+        </div>
+      </div>
+      <div class="row">
+        <form class="intervals" id="intervalForm" action="index.html" method="post">
+        </form>
+        <div class="small-3 columns menus">
+          <select class="genre" form="intervalForm">
+            <option value="" disabled selected hidden>Select Music Genre</option>
+            <option value="trap">Trap (EDM)</option>
+            <option value="trapRap">Trap (Rap)</option>
+            <option value="house">House</option>
+            <option value="dubstep">Dubstep</option>
+            <option value="futureBass">Future Bass</option>
+          </select>
+        </div>
+        <div class="small-3 columns menus">
+          <select class="exercise" form="intervalForm">
+            <option value="" disabled selected hidden>Workout Length</option>
+            <option value="30">30 seconds</option>
+            <option value="45">45 seconds</option>
+            <option value="60">1 minute</option>
+            <option value="90">1.5 minutes</option>
+            <option value="120">2 minutes</option>
+            <option value="150">2.5 minutes</option>
+            <option value="180">3 minutes</option>
+          </select>
+        </div>
+        <div class="small-3 columns menus">
+          <select class="cooldown" form="intervalForm">
+            <option value="" disabled selected hidden>Cooldown Length</option>
+            <option value="10">10 seconds</option>
+            <option value="20">20 seconds</option>
+            <option value="30">30 seconds</option>
+            <option value="40">40 seconds</option>
+            <option value="50">50 seconds</option>
+            <option value="60">60 seconds</option>
+          </select>
+        </div>
+        <div class="small-3 large-centered columns menus">
+          <select class="amount" form="intervalForm">
+            <option value="" disabled selected hidden># of Rounds</option>
+            <option value="1">1 Round</option>
+            <option value="2">2 Rounds</option>
+            <option value="3">3 Rounds</option>
+            <option value="4">4 Rounds</option>
+            <option value="5">5 Rounds</option>
+            <option value="6">6 Rounds</option>
+            <option value="7">7 Rounds</option>
+            <option value="8">8 Rounds</option>
+            <option value="9">9 Rounds</option>
+            <option value="10">10 Rounds</option>
+          </select>
+        </div>
+      </div>
+      <div class="row headerBar">
+        <div class="small-12 large-centered columns">
+          <button type="submit" name="submit" class="secondary hollow expanded button submit" form="intervalForm">Start Your Workout!</button>
+        </div>
+      </div>
     </div>
-  </body>
+    <div class="container-fluid body">
+      <div class="row">
+        <div class="medium-6 columns box1">
+          <span class="timerHeader">Work Out!</span>
+          <div id="exerciseTimer" class="timerText">00:00</div>
+          <br><br><br><br>
+        </div>
+        <div class="medium-6 columns box2">
+          <span class="timerHeader">Cool Down!</span>
+          <div id="cooldownTimer" class="timerText">00:00</div>
+          <br><br><br><br>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="player" style="visibility: hidden;"></div>
+    </div>
+  </div>
+</body>
 </html>
